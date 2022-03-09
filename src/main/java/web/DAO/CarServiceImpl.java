@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @author Vadim Ilin
  */
 @Component
-public class CarDAO {
+public class CarServiceImpl implements CarService {
     private List<Car> cars;
 
     {
@@ -25,10 +25,7 @@ public class CarDAO {
         cars.add(new Car("LOID", 145871, "red"));
     }
 
-    public List<Car> index() {
-        return cars;
-    }
-
+    @Override
     public List<Car> getCars(int quantCars) {
         if(quantCars >= 5 || quantCars == 0){
             return cars;
